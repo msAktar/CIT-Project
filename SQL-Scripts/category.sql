@@ -4,8 +4,6 @@ categoryName varchar(255) not null,
 subCategoryName varchar(255),
 );
 
-select * from category;
-
 INSERT INTO category ( categoryName, subCategoryName)
 VALUES ('Rice', 'Brown Rice'),
 ('Rice', 'Perboil Rice'),
