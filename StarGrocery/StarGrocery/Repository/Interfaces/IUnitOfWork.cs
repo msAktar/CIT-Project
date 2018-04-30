@@ -8,7 +8,7 @@ namespace StarGrocery.Repository
 {
     public interface IUnitOfWork : IDisposable
     {
-        IUserRepository UserRepo { get; }
+        IDataRepository DataRepo { get; }
         int SaveChanges();
     }
 }

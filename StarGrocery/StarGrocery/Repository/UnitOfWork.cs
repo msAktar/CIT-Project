@@ -14,11 +14,11 @@ namespace StarGrocery.Repository
         public UnitOfWork()
         {
             _context = new SGContext();
-            UserRepo = new UserRepository(_context);
+            DataRepo = new DataRepository(_context);
         }
 
 
-        public IUserRepository UserRepo { get; private set; }
+        public IDataRepository DataRepo { get; private set; }
 
         public int SaveChanges()
         {

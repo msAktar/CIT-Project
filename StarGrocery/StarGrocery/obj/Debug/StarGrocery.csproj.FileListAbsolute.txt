@@ -36,3 +36,4 @@ C:\SharminAll\CIT-Project-All\CIT-Project\StarGrocery\StarGrocery\bin\EntityFram
 C:\SharminAll\CIT-Project-All\CIT-Project\StarGrocery\StarGrocery\bin\EntityFramework.SqlServer.dll
 C:\SharminAll\CIT-Project-All\CIT-Project\StarGrocery\StarGrocery\bin\EntityFramework.xml
 C:\SharminAll\CIT-Project-All\CIT-Project\StarGrocery\StarGrocery\bin\EntityFramework.SqlServer.xml
+C:\SharminAll\CIT-Project-All\CIT-Project\StarGrocery\StarGrocery\obj\Debug\StarGrocery.csprojResolveAssemblyReference.cache

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Star Grocery Pty Ltd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!-- Bootstrap styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Customize styles -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- font awesome styles -->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--[if IE 7]>
+        <link href="css/font-awesome-ie7.min.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <base href="/" />
+</head>
+<body>
+    <div ng-app="mainApp">
+        <ng-view></ng-view>
+    </div>
+    <!--<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>-->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="assets/js/shop.js"></script>
+    <link rel="stylesheet" type="text/css" href="flexslider/flexslider.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/flexslider/2.2.2/flexslider.css">-->
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/flexslider/2.2.2/jquery.flexslider.js"></script>-->
+    <script src="flexslider/jquery.flexslider.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+   
+    <script type="text/javascript" src="AngularJs/productDetailsController.js"></script>
+    <script type="text/javascript" src="AngularJs/homeController.js"></script>
+    <script type="text/javascript" src="AngularJs/Services/dataService.js"></script>
+    <!--<script src="//rawgit.com/thenikso/angular-flexslider/master/angular-flexslider.js"></script>-->
+    <script src="flexslider/angular-flexslider.js"></script>
+
+    <script>
+        var mainApp = angular.module('mainApp', ['ngRoute', 'angular-flexslider'])
+            .config(['$routeProvider', '$httpProvider', '$locationProvider', function ($routeProvider, $httpProvider, $locationProvider) {
+                $routeProvider.when('/', {
+                    templateUrl: 'home.html',
+                    controller: 'homeController as vm'
+                })
+                $routeProvider.when('/index', {
+                    templateUrl: 'home.html',
+                    controller: 'homeController as vm'
+                })
+                    .when('/details', {
+                        templateUrl: 'productDetails.html',
+                        controller: 'productDetailsController as vm'
+                    })
+                    .otherwise({
+                        redirectTo: '/index'
+                    }
+                    );
+                //$routeProvider.when('/', {
+                //    templateUrl: '/LOE/Angular/Partials/LOEDetails.html',
+                //    controller: 'LOEdetailsCtrl as vm'
+                //})
+                //    .when('/:Id', {
+                //        templateUrl: '/LOE/Angular/Partials/LOEchecklist.html',
+                //        controller: 'LOEChecklistCtrl as vm'
+                //    });
+
+
+                $locationProvider.html5Mode(true);
+
+                $httpProvider.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8';
+                $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+
+            }])
+            .service('dataService', dataService)
+            .controller('homeController', homeController)
+    </script>
+</body>
+</html>
