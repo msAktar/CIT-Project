@@ -8,11 +8,11 @@ using StarGrocery.DbModel;
 
 namespace StarGrocery.Repository
 {
-    public class UserRepository : IUserRepository
+    public class DataRepository : IDataRepository
     {
         protected readonly SGContext Context;
 
-        public UserRepository(SGContext context)
+        public DataRepository(SGContext context)
         {
             this.Context = context;
         }
@@ -22,6 +22,13 @@ namespace StarGrocery.Repository
             var allUsers = (from u in Context.users
                         select u).ToList();
             return allUsers;
+        }
+
+        public List<dboCategory> GetAllCategories()
+        {
+            var allCategories = (from u in Context.categories
+                            select u).OrderBy(x=>x.categoryName).ToList();
+            return allCategories;
         }
     }
 }

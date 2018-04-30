@@ -13,5 +13,6 @@ namespace StarGrocery.DBContext
         }
 
         public virtual DbSet<dboUsers> users { get; set; }
+        public virtual DbSet<dboCategory> categories { get; set; }
     }
 }
